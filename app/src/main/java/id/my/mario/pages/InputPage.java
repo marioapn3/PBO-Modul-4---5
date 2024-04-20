@@ -17,23 +17,14 @@ import id.my.mario.output.Space;
 import java.util.Scanner;
 import javax.security.auth.callback.TextInputCallback;
 
-public class InputPage {
-    public String title;
-    public int width;
-    private final HLine hline;
-    private final Space space;
-    private final Label label;
-    private final Input judulInput;
-    private final Input usernameInput;
-    private final Input passwordInput;
-    private final SelectInput kategoriInput;
+public class InputPage extends BasePage{
+    private  Input judulInput;
+    private  Input usernameInput;
+    private  Input passwordInput;
+    private  SelectInput kategoriInput;
 
-    public InputPage(String title, int width) {
-        this.title = title;
-        this.width = width;
-        this.hline = new HLine(width);
-        this.space = new Space(width);
-        this.label = new Label(title.toUpperCase(), width);
+    public InputPage( int width) {
+        super("Input Page", width);
         this.judulInput = new Input("Judul Password");
         this.usernameInput = new Input("Username");
         this.passwordInput = new Input("Password");
@@ -41,22 +32,8 @@ public class InputPage {
         this.kategoriInput = new SelectInput("Kategori", kategoriOptions, width);
     }
 
-    public void draw() {
-        this.drawHeader();
-        this.space.draw();
-        this.drawContent();
-    }
-
-    public void drawHeader() {
-        this.hline.draw();
-        this.space.draw();
-        this.label.draw();
-        this.space.draw();
-        this.hline.draw();
-    }
-
-    private void drawContent() {
-        
+    @Override
+    public void drawContent() {
         this.judulInput.draw();
         String judul = judulInput.getValue();
         this.usernameInput.draw();
@@ -69,6 +46,6 @@ public class InputPage {
         PasswordStore passwordStore = new PasswordStore(judul, username, password, kategori);
         DataPassword.passData.add(passwordStore);
 
-        new MainPage("Main Page", width).draw(); // Kembali ke halaman utama setelah input selesai
+        new MainPage(width).draw(); // Kembali ke halaman utama setelah input selesai
     }
 }

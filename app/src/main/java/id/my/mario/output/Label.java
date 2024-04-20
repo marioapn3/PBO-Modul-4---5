@@ -8,7 +8,7 @@ package id.my.mario.output;
  *
  * @author USER
  */
-public class Label {
+public class Label implements Component{
 
     private int width;
     public String text;

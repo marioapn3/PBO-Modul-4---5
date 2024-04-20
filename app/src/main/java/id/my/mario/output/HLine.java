@@ -9,7 +9,7 @@ package id.my.mario.output;
  * @author USER
  */
 
-public class HLine {
+public class HLine implements Component{
      private final int width;
 
      public HLine(int width) {

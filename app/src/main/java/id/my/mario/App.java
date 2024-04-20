@@ -45,7 +45,6 @@ public class App {
 //        SelectInput pilSelect = new SelectInput("Inputkan pilihan anda:", pilihan, 70);
 //        pilSelect.draw();
 //        int value = pilSelect.getValue();
-
 ////Coba
 //        new HLine(50).draw();
 //        new Space(50).draw();
@@ -73,6 +72,6 @@ public class App {
 //        new Space(50).draw();
 //        new HLine(50).draw();
         DataPassword.loadCSVData();
-           new MainPage("Selamat Datang Guys", 80).draw();
+        new MainPage( 80).draw();
     }
 }

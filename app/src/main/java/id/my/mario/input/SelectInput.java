@@ -4,11 +4,13 @@
  */
 package id.my.mario.input;
 
+import id.my.mario.output.Component;
+
 /**
  *
  * @author USER
  */
-public class SelectInput {
+public class SelectInput implements Component{
 
     private String[] selection;
     private int width;

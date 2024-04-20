@@ -9,9 +9,10 @@ package id.my.mario.input;
  * @author USER
  */
 
+import id.my.mario.output.Component;
 import java.util.Scanner;
 
-public class Input {
+public class Input implements Component{
      private String label;
      private Scanner input;
      private String value;

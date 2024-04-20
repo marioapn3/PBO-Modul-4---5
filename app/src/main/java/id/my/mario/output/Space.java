@@ -8,7 +8,7 @@ package id.my.mario.output;
  *
  * @author USER
  */
-public class Space {
+public class Space implements Component{
 
     private int width;
 
